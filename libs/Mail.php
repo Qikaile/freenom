@@ -48,6 +48,10 @@ class Mail
                 $host = 'smtp.vip.163.com';
                 $secure = 'ssl';
                 $port = 465;
+            } else if (stripos($username, '@outlook.com') !== false) {
+                $host = 'smtp.office365.com';
+                $secure = 'starttls';
+                $port = 587;
             } else {
                 throw new \Exception('不受支持的邮箱。目前仅支持谷歌邮箱、QQ邮箱以及163邮箱，推荐使用谷歌邮箱。');
             }
